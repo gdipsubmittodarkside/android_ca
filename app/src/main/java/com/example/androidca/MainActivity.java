@@ -13,6 +13,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -121,6 +122,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         else{
             btnSelect.setEnabled(false);
         }
+
+        // Indicate how many images are selected
+        TextView numSelected_tv = findViewById(R.id.numberOfSelected);
+        String numSelected = Integer.valueOf(id_of_6_selected.size()).toString();
+        numSelected_tv.setText(numSelected + " of 6 selected");
     }
 
     private void confirmBtnClicked(){
@@ -178,7 +184,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
 
             // Launch Activity 2
-            Intent intent = new Intent(this, MainActivity2.class);
+            Intent intent = new Intent(this, MainActivity3.class);
             startActivity(intent);
 
         }
